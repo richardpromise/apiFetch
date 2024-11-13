@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { GiShoppingCart } from "react-icons/gi";
 import axios from "axios";
 import CustomSelect from "../../selector";
-import { Puff } from "react-loader-spinner";
+import { ColorRing, Puff } from "react-loader-spinner";
 // import CustomSelect from "../select";
 
 export default function Products() {
@@ -64,8 +64,8 @@ export default function Products() {
 
   if (loading)
     return (
-      <div className="h-screen flex justify-center items-center w-full flex-col">
-        <Puff
+      <div className="h-[80vh] flex justify-center items-center w-full flex-col">
+        {/* <Puff
           visible={true}
           height="80"
           width="80"
@@ -73,6 +73,16 @@ export default function Products() {
           ariaLabel="puff-loading"
           wrapperStyle={{}}
           wrapperClass=""
+        /> */}
+
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="color-ring-loading"
+          wrapperStyle={{}}
+          wrapperClass="color-ring-wrapper"
+          colors={["#cacaca", "#a3a3a3", "#8c8c8c", "#747474", "#555555"]}
         />
       </div>
     );
