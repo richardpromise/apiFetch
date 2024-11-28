@@ -3,6 +3,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import axios from "axios";
 import CustomSelect from "../../selector";
 import { ColorRing, Puff } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 // import CustomSelect from "../select";
 
 export default function Products() {
@@ -16,6 +17,8 @@ export default function Products() {
     setCategory(value);
     console.log(value);
   };
+
+  const navigate = useNavigate();
 
   // const getData = useCallback(async () => {
   //   setLoading(true); // Set loading to true when fetching starts
@@ -104,6 +107,7 @@ export default function Products() {
             <div
               key={index}
               className="p-2 border flex flex-col items-center gap-3 border-gray-300"
+              // onClick={() => navigate(`/products/${item.id}`)}
             >
               <div className="w-full flex justify-between">
                 <div className="font-bold capitalize">{item.category}</div>

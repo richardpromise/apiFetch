@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "../screen/nav/header";
 import Products from "../screen/products";
+import SingleProduct from "../screen/products/singleProduct";
 
 const MainLayout = ({ children }) => {
   return (
@@ -24,6 +25,10 @@ export default function Modules() {
             {
               path: "products",
               element: <Products />,
+            },
+            {
+              path: "category/:id",
+              element: <SingleProduct />,
             },
           ],
         },
